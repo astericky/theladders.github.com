@@ -37,6 +37,10 @@
         <lastmod>2013-04-26T09:55:53-04:00</lastmod>
     </url>
     <url>
+        <loc>http://dev.theladders.com/2013/05/varnish-in-five-acts/</loc>
+        <lastmod>2013-05-09T16:48:57-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://dev.theladders.com/404.html</loc>
         <lastmod>2013-04-26T09:55:53-04:00</lastmod>
     </url>
@@ -134,10 +138,10 @@
     </url>
     <url>
         <loc>http://dev.theladders.com/blog/archives/</loc>
-        <lastmod>2013-05-09T16:02:00-04:00</lastmod>
+        <lastmod>2013-05-09T16:48:57-04:00</lastmod>
     </url>
     <url>
         <loc>http://dev.theladders.com/</loc>
-        <lastmod>2013-05-09T16:02:00-04:00</lastmod>
+        <lastmod>2013-05-09T16:48:57-04:00</lastmod>
     </url>
 </urlset>
