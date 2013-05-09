@@ -4,7 +4,7 @@
   <title><![CDATA[TheLadders Engineering Stories]]></title>
   <link href="http://dev.theladders.com/atom.xml" rel="self"/>
   <link href="http://dev.theladders.com/"/>
-  <updated>2013-04-26T09:59:43-04:00</updated>
+  <updated>2013-05-09T16:02:23-04:00</updated>
   <id>http://dev.theladders.com/</id>
   <author>
     <name><![CDATA[TheLadders Engineering]]></name>
@@ -307,7 +307,7 @@ nrepl</code>, I can interact with the running server like so:</p>
   <entry>
     <title type="html"><![CDATA[Trouble with Google's ImmutableSet]]></title>
     <link href="http://dev.theladders.com/2013/03/trouble-with-googles-immutableset/"/>
-    <updated>2013-03-12T06:10:10-04:00</updated>
+    <updated>2013-03-12T10:10:10-04:00</updated>
     <id>http://dev.theladders.com/2013/03/trouble-with-googles-immutableset</id>
     <content type="html"><![CDATA[<p><em>Note: this post was originally published March, 12, 2012.  We&#8217;re bringing it back from the dead because we love zombies and happen to really like it.</em></p>
 
@@ -765,7 +765,7 @@ presentation and discussion.</p>
   <entry>
     <title type="html"><![CDATA[Mutation testing with PIT: A step beyond normal code coverage]]></title>
     <link href="http://dev.theladders.com/2013/02/mutation-testing-with-pit-a-step-beyond-normal-code-coverage/"/>
-    <updated>2013-02-20T03:15:15-05:00</updated>
+    <updated>2013-02-20T08:15:15-05:00</updated>
     <id>http://dev.theladders.com/2013/02/mutation-testing-with-pit-a-step-beyond-normal-code-coverage</id>
     <content type="html"><![CDATA[<blockquote><p>&#8220;Program testing can be used to show the presence of bugs, but never to show their absence!&#8221;</p><footer><strong>&#8211;Edsger W. Dijkstra</strong></footer></blockquote>
 
@@ -984,7 +984,7 @@ removed call to com/theladders/Person::setLastName : SURVIVED</p>
   <entry>
     <title type="html"><![CDATA[The Catechism of Code]]></title>
     <link href="http://dev.theladders.com/2013/02/onboarding/"/>
-    <updated>2013-02-01T06:34:00-05:00</updated>
+    <updated>2013-02-01T11:34:00-05:00</updated>
     <id>http://dev.theladders.com/2013/02/onboarding</id>
     <content type="html"><![CDATA[<blockquote><p>&#8220;Begin, be bold, and venture to be wise.&#8221;</p><footer><strong>&#8211;Horace</strong></footer></blockquote>
 
@@ -1048,7 +1048,7 @@ removed call to com/theladders/Person::setLastName : SURVIVED</p>
   <entry>
     <title type="html"><![CDATA[New Beginnings]]></title>
     <link href="http://dev.theladders.com/2013/01/new-beginnings/"/>
-    <updated>2013-01-31T06:59:09-05:00</updated>
+    <updated>2013-01-31T11:59:09-05:00</updated>
     <id>http://dev.theladders.com/2013/01/new-beginnings</id>
     <content type="html"><![CDATA[<blockquote><p>&#8220;You must be the change you wish to see&#8230;&#8221;</p><footer><strong>&#8211;Gandhi</strong></footer></blockquote>
 

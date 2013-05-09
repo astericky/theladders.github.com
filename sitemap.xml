@@ -6,7 +6,7 @@
     </url>
     <url>
         <loc>http://dev.theladders.com/2013/02/onboarding/</loc>
-        <lastmod>2013-04-26T09:55:53-04:00</lastmod>
+        <lastmod>2013-05-09T16:02:00-04:00</lastmod>
     </url>
     <url>
         <loc>
@@ -58,7 +58,7 @@
     </url>
     <url>
         <loc>http://dev.theladders.com/ourteam/</loc>
-        <lastmod>2013-04-26T09:57:52-04:00</lastmod>
+        <lastmod>2013-05-09T16:02:00-04:00</lastmod>
     </url>
     <url>
         <loc>http://dev.theladders.com/ourteam/kyrisarantakos/</loc>
@@ -98,7 +98,7 @@
     </url>
     <url>
         <loc>http://dev.theladders.com/ourteam/us/</loc>
-        <lastmod>2013-04-26T09:55:53-04:00</lastmod>
+        <lastmod>2013-05-09T16:02:00-04:00</lastmod>
     </url>
     <url>
         <loc>http://dev.theladders.com/ourteam/danielwislocki/</loc>
@@ -107,6 +107,14 @@
     <url>
         <loc>http://dev.theladders.com/ourteam/peter/</loc>
         <lastmod>2013-04-26T09:55:53-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dev.theladders.com/ourteam/seantallen/</loc>
+        <lastmod>2013-05-09T16:02:00-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dev.theladders.com/ourteam/hailin/</loc>
+        <lastmod>2013-05-09T16:02:00-04:00</lastmod>
     </url>
     <url>
         <loc>http://dev.theladders.com/ourteam/susanneabdelrahman/</loc>
@@ -121,19 +129,15 @@
         <lastmod>2013-04-26T09:55:53-04:00</lastmod>
     </url>
     <url>
-        <loc>http://dev.theladders.com/ourteam/seanallen/</loc>
-        <lastmod>2013-04-26T09:55:53-04:00</lastmod>
-    </url>
-    <url>
         <loc>http://dev.theladders.com/robots.txt</loc>
         <lastmod>2013-04-26T09:55:53-04:00</lastmod>
     </url>
     <url>
         <loc>http://dev.theladders.com/blog/archives/</loc>
-        <lastmod>2013-04-26T09:55:53-04:00</lastmod>
+        <lastmod>2013-05-09T16:02:00-04:00</lastmod>
     </url>
     <url>
         <loc>http://dev.theladders.com/</loc>
-        <lastmod>2013-04-26T09:55:53-04:00</lastmod>
+        <lastmod>2013-05-09T16:02:00-04:00</lastmod>
     </url>
 </urlset>
