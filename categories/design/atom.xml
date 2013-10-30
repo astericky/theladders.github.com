@@ -4,7 +4,7 @@
   <title><![CDATA[Category: design | TheLadders Engineering Stories]]></title>
   <link href="http://dev.theladders.com/categories/design/atom.xml" rel="self"/>
   <link href="http://dev.theladders.com/"/>
-  <updated>2013-10-30T13:38:55-04:00</updated>
+  <updated>2013-10-30T13:51:16-04:00</updated>
   <id>http://dev.theladders.com/</id>
   <author>
     <name><![CDATA[TheLadders Engineering]]></name>
@@ -109,6 +109,8 @@ My favorite side-effect of going responsive is the close collaboration between d
 <p>Our new responsive website is still young, it was only released earlier this year. We’ve just begun to throw serious traffic at it, but I’m confident that it performs and looks better than the old, non-responsive site. We are closely monitoring customer satisfaction and page visits from mobile devices. Hopefully in a couple months we’ll have flattering statistics and feedback to post.</p>
 
 <p>Until then, check it out for yourself: <a href="https://www.theladders.com/">www.theladders.com</a>. While it is by no means perfect&mdash;there are some devices and screen configurations where the experience is less than optimal&mdash;it is far better than the original site both in terms of its responsiveness and clean design.</p>
+
+<p>Join the discussion at <a href="https://news.ycombinator.com/item?id=6641857">Hacker News</a>.</p>
 
 <p><em>Note: In an effort to most accurately describe the current state of our site&rsquo;s responsiveness, this post was edited and updated by Daniel Wislocki. It was originally written by <a href="https://twitter.com/logtailer">Christina Kung</a> in early April, when design was unfinished.</em></p>
 ]]></content>
