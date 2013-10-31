@@ -4,7 +4,11 @@
   <title><![CDATA[Category: Clojure | TheLadders Engineering Stories]]></title>
   <link href="http://dev.theladders.com/categories/clojure/atom.xml" rel="self"/>
   <link href="http://dev.theladders.com/"/>
+<<<<<<< HEAD
   <updated>2013-05-22T18:08:30-04:00</updated>
+=======
+  <updated>2013-10-30T13:52:14-04:00</updated>
+>>>>>>> upstream/master
   <id>http://dev.theladders.com/</id>
   <author>
     <name><![CDATA[TheLadders Engineering]]></name>
@@ -18,7 +22,11 @@
     <link href="http://dev.theladders.com/2013/04/getting-some-clojure-nrepl-in-a-spring-app/"/>
     <updated>2013-04-02T16:04:00-04:00</updated>
     <id>http://dev.theladders.com/2013/04/getting-some-clojure-nrepl-in-a-spring-app</id>
+<<<<<<< HEAD
     <content type="html"><![CDATA[<p><blockquote><p>You don't have to be great to start, but you have to start to be great.</p><footer><strong>--Zig Ziglar</strong></footer></blockquote></p>
+=======
+    <content type="html"><![CDATA[<p><blockquote><p>You don&rsquo;t have to be great to start, but you have to start to be great.</p><footer><strong>&mdash;Zig Ziglar</strong></footer></blockquote></p>
+>>>>>>> upstream/master
 
 <p>Despite having read through the
 <a href="http://www.amazon.com/The-Joy-Clojure-Thinking-Way/dp/1935182641/">several</a>
@@ -75,7 +83,11 @@ public class NReplConfig
   // Clojure code to start the server. If you wanted to, you could probably move the port value
   // into a Java properties file, and use the @Value annotation to provide it instead.</p>
 
+<<<<<<< HEAD
 <p>  private static final String NREPL_INIT = "(use '[clojure.tools.nrepl.server :only (start-server stop-server)]) " +</p>
+=======
+<p>  private static final String NREPL_INIT = &ldquo;(use &lsquo;[clojure.tools.nrepl.server :only (start-server stop-server)]) &rdquo; +</p>
+>>>>>>> upstream/master
 
 <pre><code>                                       "(start-server :port 7888)";
 </code></pre>
@@ -127,7 +139,11 @@ nrepl</code>, I can interact with the running server like so:</p>
 
 <p>```
 ; nREPL 0.1.7-preview
+<<<<<<< HEAD
 user> (in-ns 'lw)</p>
+=======
+user> (in-ns &lsquo;lw)</p>
+>>>>>>> upstream/master
 
 <h1><Namespace lw></h1>
 
@@ -135,9 +151,15 @@ user> (in-ns 'lw)</p>
 
 <h1><AnnotationConfigWebApplicationContext Root WebApplicationContext: startup date [Thu Mar 28 16:25:12 EDT 2013]; root of context hierarchy></h1>
 
+<<<<<<< HEAD
 <p>lw> (def jss (.getBean <em>context</em> getBean "jobseekerService"))</p>
 
 <h1>'lw/jss</h1>
+=======
+<p>lw> (def jss (.getBean <em>context</em> getBean &ldquo;jobseekerService&rdquo;))</p>
+
+<h1>&lsquo;lw/jss</h1>
+>>>>>>> upstream/master
 
 <p>lw> jss</p>
 
@@ -145,14 +167,22 @@ user> (in-ns 'lw)</p>
 
 <p>lw> (def jsid (com.theladders.lw.jobseeker.model.JobseekerId. 7906538))</p>
 
+<<<<<<< HEAD
 <h1>'lw/jsid</h1>
+=======
+<h1>&lsquo;lw/jsid</h1>
+>>>>>>> upstream/master
 
 <p>lw> (.get jss jsid)</p>
 
 <h1><Jobseeker com.theladders.lw.jobseeker.model.Jobseeker@5dfcb9fd></h1>
 
 <p>lw> (.getFirstName (.get jss jsid))
+<<<<<<< HEAD
 "Daniel"
+=======
+&ldquo;Daniel&rdquo;
+>>>>>>> upstream/master
 lw>
 ```</p>
 
@@ -162,7 +192,11 @@ lw>
 
 <p>``` xml
 <repositories>
+<<<<<<< HEAD
 ...</p>
+=======
+&hellip;</p>
+>>>>>>> upstream/master
 
 <pre><code>&lt;!-- The following gives us access to Clojure libraries like clojure-complete. --&gt;
 &lt;repository&gt;
@@ -171,10 +205,17 @@ lw>
 &lt;/repository&gt;
 </code></pre>
 
+<<<<<<< HEAD
 <p>...
 </repositories>
 <dependencies>
 ...</p>
+=======
+<p>&hellip;
+</repositories>
+<dependencies>
+&hellip;</p>
+>>>>>>> upstream/master
 
 <pre><code>&lt;!-- Clojure-complete enables tab-completion in the REPL. --&gt;
 &lt;dependency&gt;
@@ -194,7 +235,11 @@ lw>
 &lt;/dependency&gt;
 </code></pre>
 
+<<<<<<< HEAD
 <p>...
+=======
+<p>&hellip;
+>>>>>>> upstream/master
 </dependencies>
 ```</p>
 

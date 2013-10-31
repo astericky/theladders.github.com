@@ -9,7 +9,11 @@
   <meta name="author" content="TheLadders Engineering">
 
   
+<<<<<<< HEAD
   <meta name="description" content="Note: this post was originally published March, 12, 2012.  We&#8217;re bringing it back from the dead because we love zombies and happen to really &hellip;">
+=======
+  <meta name="description" content="Note: this post was originally published March, 12, 2012.  We&rsquo;re bringing it back from the dead because we love zombies and happen to really &hellip;">
+>>>>>>> upstream/master
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +69,7 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 </head>
 
 <body    class="collapse-sidebar sidebar-footer" >
+<<<<<<< HEAD
   <header role="banner"><hgroup>
   <h1><a href="/">TheLadders Engineering Stories</a></h1>
   
@@ -74,6 +79,11 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 
 </header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
+=======
+	<nav class="main-navigation" role="navigation">
+		<div class="container">
+			<ul class="subscription" data-subscription="rss">
+>>>>>>> upstream/master
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
@@ -85,16 +95,42 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
   </fieldset>
 </form>
   
+<<<<<<< HEAD
 <ul class="main-navigation">
+=======
+<ul>
+>>>>>>> upstream/master
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
   <li><a href="/ourteam">Our Team</a></li>
 </ul>
 
+<<<<<<< HEAD
 </nav>
   <div id="main">
     <div id="content">
       <div>
+=======
+
+		</div>
+	</nav>
+	<header class="main-header" role="banner"><div class="container">
+	<figure class="logo">
+		<a href="/"><img src="/images/skippy_lightbulb.png" alt="TheLadders' Engineering Blog"/></a>
+	</figure>
+	<hgroup>
+		<h1 class="title"><a href="/">TheLadders Engineering Stories</a></h1>
+		
+		<h2 class="subtitle">This is how we work.</h2>
+		
+	</hgroup>
+</div>
+
+</header>
+	<main id="main" class="main">
+		<div class="content">
+		  <div>
+>>>>>>> upstream/master
 <article class="hentry" role="article">
   
   <header>
@@ -115,22 +151,37 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
   
 
 
+<<<<<<< HEAD
 <time datetime="2013-03-12T10:10:10-04:00" pubdate data-updated="true">Mar 12<span>th</span>, 2013</time>
+=======
+<time datetime="2013-03-12T06:10:10-04:00" pubdate data-updated="true">Mar 12<span>th</span>, 2013</time>
+>>>>>>> upstream/master
         
       </p>
     
   </header>
 
 
+<<<<<<< HEAD
 <div class="entry-content"><p><em>Note: this post was originally published March, 12, 2012.  We&#8217;re bringing it back from the dead because we love zombies and happen to really like it.</em></p>
+=======
+<div class="entry-content"><p><em>Note: this post was originally published March, 12, 2012.  We&rsquo;re bringing it back from the dead because we love zombies and happen to really like it.</em></p>
+>>>>>>> upstream/master
 
 <blockquote><p>When the going gets weird, the weird turn pro.</p><footer><strong>&#8211;Hunter S. Thompson</strong></footer></blockquote>
 
 
+<<<<<<< HEAD
 <p>One feature we offer here at TheLadders is the ability for job seekers to &#8220;follow&#8221; recruiters, sort of how Twitter users can follow other Twitter users. Recruiters can then broadcast information, like announcements about new openings, to their followers.</p>
 
 <p>At start-up, as well as at set times during the night, caches are loaded that contain mappings between followable recruiters and the job seekers who follow them.
 Recently we noticed that the time to create one of these caches was gradually increasing. There&#8217;s a cache that maps recruiters to job seekers, called the &#8220;followers cache,&#8221; which originally took a few minutes to build. We found that the time it was taking to build was steadily increasing over the course of just a few weeks to 30 minutes or more. This wasn&#8217;t immediately apparent to us because the problem only manifested in production, and not in the day-to-day QA environment used by developers.</p>
+=======
+<p>One feature we offer here at TheLadders is the ability for job seekers to &ldquo;follow&rdquo; recruiters, sort of how Twitter users can follow other Twitter users. Recruiters can then broadcast information, like announcements about new openings, to their followers.</p>
+
+<p>At start-up, as well as at set times during the night, caches are loaded that contain mappings between followable recruiters and the job seekers who follow them.
+Recently we noticed that the time to create one of these caches was gradually increasing. There&rsquo;s a cache that maps recruiters to job seekers, called the &ldquo;followers cache,&rdquo; which originally took a few minutes to build. We found that the time it was taking to build was steadily increasing over the course of just a few weeks to 30 minutes or more. This wasn&rsquo;t immediately apparent to us because the problem only manifested in production, and not in the day-to-day QA environment used by developers.</p>
+>>>>>>> upstream/master
 
 <p>Below you can see the times taken to create the cache (in minutes) on four different nodes:</p>
 
@@ -139,9 +190,15 @@ Recently we noticed that the time to create one of these caches was gradually in
 
 <p><a href="/images/cache-creation-slowdown1.png"><img class="center" src="/images/cache-creation-slowdown1.png" width="300" height="171" title="Cache creation slowdown chart" ></a></p>
 
+<<<<<<< HEAD
 <p>You&#8217;ll notice the jump on 1/16 from a gradual increase to a more rapid increase. That day a new release went out that included an increase in the size of a related cache- one that contains all job seekers who have permission to follow recruiters. Intersections of that cache with another are then used to build the followers cache.</p>
 
 <p>At first we thought that the slowdown was a function of the increased cache size. Maybe pulling more data from the database to fill up the larger cache was the culprit. But from the logs we found that wasn&#8217;t the case. In fact, we found that CPU usage was spiking to 100% while the cache was being built. This was in contrast to the QA machines, where CPU did not spike at all during the process. Further analysis determined the code was spending the vast majority of its time calculating the intersections of caches to produce the followers cache. The code is something along these lines:</p>
+=======
+<p>You&rsquo;ll notice the jump on 1/16 from a gradual increase to a more rapid increase. That day a new release went out that included an increase in the size of a related cache- one that contains all job seekers who have permission to follow recruiters. Intersections of that cache with another are then used to build the followers cache.</p>
+
+<p>At first we thought that the slowdown was a function of the increased cache size. Maybe pulling more data from the database to fill up the larger cache was the culprit. But from the logs we found that wasn&rsquo;t the case. In fact, we found that CPU usage was spiking to 100% while the cache was being built. This was in contrast to the QA machines, where CPU did not spike at all during the process. Further analysis determined the code was spending the vast majority of its time calculating the intersections of caches to produce the followers cache. The code is something along these lines:</p>
+>>>>>>> upstream/master
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -189,9 +246,15 @@ Recently we noticed that the time to create one of these caches was gradually in
 
 <p>The standard deviation of this set of IDs is 642,039.</p>
 
+<<<<<<< HEAD
 <p>Opening up the code in ImmutableSet, we find that it uses a linear array of buckets, and when a collision occurs it probes each bucket until it finds an empty one, and puts the element there. It uses a secondary hash function, called smear(), to index into the array. Presumably this is used to augment whatever hash is already supplied by the element to be inserted. Unfortunately this isn&#8217;t enough to overcome the distribution of IDs in our production data. Since Java a Integer&#8217;s hash code is just its value, the efficiency of the ImmutableSet ends up being subject to the distribution of the IDs. The number of collisions that occur with production data when building the set is a huge 3,217,789,124, but with our somewhat larger QA dataset, only 3,199,502. If we read in the same production data as Strings instead of Integers, however, the number of collisions drops dramatically, and production performance is equivalent to QA&#8217;s.</p>
 
 <p>Both our QA and production data cause the same size of array of buckets of 1,048,576 to be used internally by ImmutableSet. Rendering this array into a 1024 x 1024 square, and color-coding by number of collisions at that index, we can have a better idea of what&#8217;s happening.</p>
+=======
+<p>Opening up the code in ImmutableSet, we find that it uses a linear array of buckets, and when a collision occurs it probes each bucket until it finds an empty one, and puts the element there. It uses a secondary hash function, called smear(), to index into the array. Presumably this is used to augment whatever hash is already supplied by the element to be inserted. Unfortunately this isn&rsquo;t enough to overcome the distribution of IDs in our production data. Since Java a Integer&rsquo;s hash code is just its value, the efficiency of the ImmutableSet ends up being subject to the distribution of the IDs. The number of collisions that occur with production data when building the set is a huge 3,217,789,124, but with our somewhat larger QA dataset, only 3,199,502. If we read in the same production data as Strings instead of Integers, however, the number of collisions drops dramatically, and production performance is equivalent to QA&rsquo;s.</p>
+
+<p>Both our QA and production data cause the same size of array of buckets of 1,048,576 to be used internally by ImmutableSet. Rendering this array into a 1024 x 1024 square, and color-coding by number of collisions at that index, we can have a better idea of what&rsquo;s happening.</p>
+>>>>>>> upstream/master
 
 <p>The colors in the graphics below have the following meaning:</p>
 
@@ -245,7 +308,11 @@ Recently we noticed that the time to create one of these caches was gradually in
 
 <p><a href="/images/ImmutableSet-collisions-in-production.png"><img class="center" src="/images/ImmutableSet-collisions-in-production.png" width="300" height="300" title="&#34;ImmutableSet collisions in production&#34;" alt="&#34;ImmutableSet collisions in production&#34;"></a></p>
 
+<<<<<<< HEAD
 <p>The same algorithm is used to implement the set&#8217;s contains() method, so operations such as intersections are also extremely slow with this data. A simple change to Java&#8217;s built-in HashSet fixes the problem.</p>
+=======
+<p>The same algorithm is used to implement the set&#8217;s contains() method, so operations such as intersections are also extremely slow with this data. A simple change to Java&rsquo;s built-in HashSet fixes the problem.</p>
+>>>>>>> upstream/master
 
 <p><a href="http://www.reddit.com/r/programming/comments/1a5by8/trouble_wi%20%20%20%20th_googles_immutableset/">Join the discussion on reddit</a>.</p>
 </div>
@@ -257,11 +324,16 @@ Recently we noticed that the time to create one of these caches was gradually in
   
 
 
+<<<<<<< HEAD
   
      
     <span class="byline author vcard">Posted by <span class="fn">
 		
 		
+=======
+       
+     <span class="byline author vcard">Posted by <span class="fn">
+>>>>>>> upstream/master
 		<a href="/ourteam/danielwislocki">Daniel Wislocki</a></span></span>
   
   
@@ -279,7 +351,11 @@ Recently we noticed that the time to create one of these caches was gradually in
   
 
 
+<<<<<<< HEAD
 <time datetime="2013-03-12T10:10:10-04:00" pubdate data-updated="true">Mar 12<span>th</span>, 2013</time>
+=======
+<time datetime="2013-03-12T06:10:10-04:00" pubdate data-updated="true">Mar 12<span>th</span>, 2013</time>
+>>>>>>> upstream/master
       
 
 <span class="categories">
@@ -317,13 +393,22 @@ Recently we noticed that the time to create one of these caches was gradually in
 
 </div>
 
+<<<<<<< HEAD
 <aside class="sidebar">
   
     <section>
+=======
+		</div>
+	</main>
+	<aside class="sidebar">
+		
+		<section>
+>>>>>>> upstream/master
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
       <li class="post">
+<<<<<<< HEAD
         <a href="/2013/05/the-evolution-of-qa-at-theladders/">The Evolution of QA at TheLadders</a>
       </li>
     
@@ -341,6 +426,25 @@ Recently we noticed that the time to create one of these caches was gradually in
     
       <li class="post">
         <a href="/2013/03/trouble-with-googles-immutableset/">Trouble with Google's ImmutableSet</a>
+=======
+        <a href="/2013/10/responsive-design-keeping-our-thick-client-skinny/">Responsive Design: Keeping our thick client skinny</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/08/were-hosting-erlang-factory-lite/">We're Hosting the first NYC Erlang Factory Lite on September 14th</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/07/denormalize-the-datas-for-great-good/">Denormalize the Datas for Great Good</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/05/the-evolution-of-qa-at-theladders/">The Evolution of QA at TheLadders</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/05/varnish-in-five-acts/">Varnish in Five Acts</a>
+>>>>>>> upstream/master
       </li>
     
   </ul>
@@ -376,6 +480,7 @@ Recently we noticed that the time to create one of these caches was gradually in
 </section>
 
 
+<<<<<<< HEAD
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
@@ -409,6 +514,22 @@ Recently we noticed that the time to create one of these caches was gradually in
 
 </footer>
   
+=======
+
+
+
+		
+	</aside>
+	<footer class="footer" role="contentinfo"><div class="container">
+	<p>
+		Copyright &copy; 2013 - TheLadders Engineering -
+		<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+	</p>
+</div>
+
+</footer>
+	
+>>>>>>> upstream/master
 
 
 

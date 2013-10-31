@@ -65,6 +65,7 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 </head>
 
 <body    class="collapse-sidebar sidebar-footer" >
+<<<<<<< HEAD
   <header role="banner"><hgroup>
   <h1><a href="/">TheLadders Engineering Stories</a></h1>
   
@@ -74,6 +75,11 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 
 </header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
+=======
+	<nav class="main-navigation" role="navigation">
+		<div class="container">
+			<ul class="subscription" data-subscription="rss">
+>>>>>>> upstream/master
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
@@ -85,16 +91,42 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
   </fieldset>
 </form>
   
+<<<<<<< HEAD
 <ul class="main-navigation">
+=======
+<ul>
+>>>>>>> upstream/master
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
   <li><a href="/ourteam">Our Team</a></li>
 </ul>
 
+<<<<<<< HEAD
 </nav>
   <div id="main">
     <div id="content">
       <div>
+=======
+
+		</div>
+	</nav>
+	<header class="main-header" role="banner"><div class="container">
+	<figure class="logo">
+		<a href="/"><img src="/images/skippy_lightbulb.png" alt="TheLadders' Engineering Blog"/></a>
+	</figure>
+	<hgroup>
+		<h1 class="title"><a href="/">TheLadders Engineering Stories</a></h1>
+		
+		<h2 class="subtitle">This is how we work.</h2>
+		
+	</hgroup>
+</div>
+
+</header>
+	<main id="main" class="main">
+		<div class="content">
+		  <div>
+>>>>>>> upstream/master
 <article class="hentry" role="article">
   
   <header>
@@ -135,7 +167,11 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 
 <p>In addition, our service code was muddled with messy caching logic.  Making the code harder to reuse, and more annoyingly, changes just affecting caching forced us to re-release the entire service.  We didn’t like this mixing of concerns.</p>
 
+<<<<<<< HEAD
 <p>We thought we could do better if we used external read through caches. It&#8217;s easy to slide them between existing clients and services. With caching outside the service, it get released only when their logic changes not because we’re tuning caching.</p>
+=======
+<p>We thought we could do better if we used external read through caches. It&rsquo;s easy to slide them between existing clients and services. With caching outside the service, it get released only when their logic changes not because we’re tuning caching.</p>
+>>>>>>> upstream/master
 
 <p>For reasons too numerous to cover in this post we chose <a href="https://www.varnish-cache.org/about">Varnish</a> as our read through cache.</p>
 
@@ -165,7 +201,11 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 
 <h3>Via Header:</h3>
 
+<<<<<<< HEAD
 <p>All requests that change the state of a job seeker that are made via the service attach a header in the response called &#8220;x-invalidates&#8221; that looks something like:</p>
+=======
+<p>All requests that change the state of a job seeker that are made via the service attach a header in the response called &ldquo;x-invalidates&rdquo; that looks something like:</p>
+>>>>>>> upstream/master
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>x-invalidates: /jobseekers/123</span></code></pre></td></tr></table></div></figure>
@@ -191,7 +231,11 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 
 <h3>Load Balancing</h3>
 
+<<<<<<< HEAD
 <p>We have four service servers behind varnish so we create four backend entries and then set up a director to round robin between them. Then in vcl_recv, we set our director named &#8216;nodes&#8217; to be the backend that we will use to fetch content.</p>
+=======
+<p>We have four service servers behind varnish so we create four backend entries and then set up a director to round robin between them. Then in vcl_recv, we set our director named &lsquo;nodes&rsquo; to be the backend that we will use to fetch content.</p>
+>>>>>>> upstream/master
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -286,7 +330,11 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 
 <h3>Degraded</h3>
 
+<<<<<<< HEAD
 <p>Each backend is setup with a probe url that we use to check its health. If the probe url doesn&#8217;t return at least one HTTP 200 response within a fifteen second period, we mark that backend as unhealthy.</p>
+=======
+<p>Each backend is setup with a probe url that we use to check its health. If the probe url doesn&rsquo;t return at least one HTTP 200 response within a fifteen second period, we mark that backend as unhealthy.</p>
+>>>>>>> upstream/master
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -361,8 +409,13 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 <p>We do two types of invalidation:</p>
 
 <ul>
+<<<<<<< HEAD
 <li>invalidation based on the &#8216;x-invalidates&#8217; header that comes back with a response</li>
 <li>&#8216;manual&#8217; invalidation based on sending the HTTP PURGE verb to a url in the Varnish cache.</li>
+=======
+<li>invalidation based on the &lsquo;x-invalidates&rsquo; header that comes back with a response</li>
+<li>&lsquo;manual&rsquo; invalidation based on sending the HTTP PURGE verb to a url in the Varnish cache.</li>
+>>>>>>> upstream/master
 </ul>
 
 
@@ -428,7 +481,11 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 </span></code></pre></td></tr></table></div></figure>
 
 
+<<<<<<< HEAD
 <p>If it doesn&#8217;t, return a 404 response code:</p>
+=======
+<p>If it doesn&rsquo;t, return a 404 response code:</p>
+>>>>>>> upstream/master
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -476,7 +533,11 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 </span></code></pre></td></tr></table></div></figure>
 
 
+<<<<<<< HEAD
 <p>Any &#8216;successful&#8217; PUT, POST, DELETE or PATCH response will have its x-invalidates header used as a regular expression to invalidate existing content whose x-url header matches the x-invalidates regex.</p>
+=======
+<p>Any &lsquo;successful&rsquo; PUT, POST, DELETE or PATCH response will have its x-invalidates header used as a regular expression to invalidate existing content whose x-url header matches the x-invalidates regex.</p>
+>>>>>>> upstream/master
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -770,11 +831,16 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
   
 
 
+<<<<<<< HEAD
   
      
     <span class="byline author vcard">Posted by <span class="fn">
 		
 		
+=======
+       
+     <span class="byline author vcard">Posted by <span class="fn">
+>>>>>>> upstream/master
 		<a href="/ourteam/seantallen">Sean T Allen</a></span></span>
   
   
@@ -797,7 +863,11 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 
 <span class="categories">
   
+<<<<<<< HEAD
     <a class='category' href='/categories/varnish/'>Varnish</a>
+=======
+    <a class='category' href='/categories/scaling/'>Scaling</a>, <a class='category' href='/categories/varnish/'>Varnish</a>
+>>>>>>> upstream/master
   
 </span>
 
@@ -830,13 +900,22 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 
 </div>
 
+<<<<<<< HEAD
 <aside class="sidebar">
   
     <section>
+=======
+		</div>
+	</main>
+	<aside class="sidebar">
+		
+		<section>
+>>>>>>> upstream/master
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
       <li class="post">
+<<<<<<< HEAD
         <a href="/2013/05/the-evolution-of-qa-at-theladders/">The Evolution of QA at TheLadders</a>
       </li>
     
@@ -854,6 +933,25 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
     
       <li class="post">
         <a href="/2013/03/trouble-with-googles-immutableset/">Trouble with Google's ImmutableSet</a>
+=======
+        <a href="/2013/10/responsive-design-keeping-our-thick-client-skinny/">Responsive Design: Keeping our thick client skinny</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/08/were-hosting-erlang-factory-lite/">We're Hosting the first NYC Erlang Factory Lite on September 14th</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/07/denormalize-the-datas-for-great-good/">Denormalize the Datas for Great Good</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/05/the-evolution-of-qa-at-theladders/">The Evolution of QA at TheLadders</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/05/varnish-in-five-acts/">Varnish in Five Acts</a>
+>>>>>>> upstream/master
       </li>
     
   </ul>
@@ -889,6 +987,7 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 </section>
 
 
+<<<<<<< HEAD
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
@@ -922,6 +1021,22 @@ var _sf_async_config={uid:14481,domain:"dev.theladders.com"};
 
 </footer>
   
+=======
+
+
+
+		
+	</aside>
+	<footer class="footer" role="contentinfo"><div class="container">
+	<p>
+		Copyright &copy; 2013 - TheLadders Engineering -
+		<span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+	</p>
+</div>
+
+</footer>
+	
+>>>>>>> upstream/master
 
 
 

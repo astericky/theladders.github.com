@@ -4,7 +4,11 @@
   <title><![CDATA[Category: DDD | TheLadders Engineering Stories]]></title>
   <link href="http://dev.theladders.com/categories/ddd/atom.xml" rel="self"/>
   <link href="http://dev.theladders.com/"/>
+<<<<<<< HEAD
   <updated>2013-05-22T18:08:30-04:00</updated>
+=======
+  <updated>2013-10-30T13:52:14-04:00</updated>
+>>>>>>> upstream/master
   <id>http://dev.theladders.com/</id>
   <author>
     <name><![CDATA[TheLadders Engineering]]></name>
@@ -18,7 +22,11 @@
     <link href="http://dev.theladders.com/2013/03/eric-evans-is-coming-to-theladders/"/>
     <updated>2013-03-08T10:09:00-05:00</updated>
     <id>http://dev.theladders.com/2013/03/eric-evans-is-coming-to-theladders</id>
+<<<<<<< HEAD
     <content type="html"><![CDATA[<p><blockquote><p>... when the Man comes around.</p><footer><strong>--Johnny Cash</strong></footer></blockquote></p>
+=======
+    <content type="html"><![CDATA[<p><blockquote><p>&hellip; when the Man comes around.</p><footer><strong>&mdash;Johnny Cash</strong></footer></blockquote></p>
+>>>>>>> upstream/master
 
 <p>We are happy to announce that on April 10th, TheLadders will be hosting
 <a href="http://domainlanguage.com/about/">Eric Evans</a>, the codifier of
@@ -56,7 +64,11 @@ example:</p>
 <p>``` java
 public class Subscription
 {
+<<<<<<< HEAD
   ...</p>
+=======
+  &hellip;</p>
+>>>>>>> upstream/master
 
 <p>  public AutoRenewFlags getAutoRenewFlag()
   {</p>
@@ -108,7 +120,11 @@ Subscription class:</p>
 <p>``` java
 public abstract class Subscription
 {
+<<<<<<< HEAD
    ...</p>
+=======
+   &hellip;</p>
+>>>>>>> upstream/master
 
 <p>   public abstract Subscription withAutoRenewOn();</p>
 
@@ -123,7 +139,11 @@ unsubscribe method actually unsubscribes the customer, returning a
 CanceledSubscription. The “unsubscribe reason” is now strongly typed,
 clearly communicating which values are allowed. Auto-renewal changes
 yield a new immutable Subscription object, and can be chained together
+<<<<<<< HEAD
 with other "with*" methods to produce new subscriptions with appropriate
+=======
+with other &ldquo;with*&rdquo; methods to produce new subscriptions with appropriate
+>>>>>>> upstream/master
 settings.</p>
 
 <p>Another example of an anemic domain model, lacking an
@@ -199,7 +219,11 @@ public Receipt makeWith(PaymentMethod method)
 Payment object can actually make a payment and create records of
 itself. It seems only natural.</p>
 
+<<<<<<< HEAD
 <p>There’s much more qto Domain Driven Design than I’ve shown here --
+=======
+<p>There’s much more qto Domain Driven Design than I’ve shown here &mdash;
+>>>>>>> upstream/master
 this post barely scratches the surface. And as a team we know we still
 have much farther to go in its mastery, but the time we’ve spent in
 study and practice have been well worth the effort so far.</p>

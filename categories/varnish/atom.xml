@@ -4,7 +4,11 @@
   <title><![CDATA[Category: Varnish | TheLadders Engineering Stories]]></title>
   <link href="http://dev.theladders.com/categories/varnish/atom.xml" rel="self"/>
   <link href="http://dev.theladders.com/"/>
+<<<<<<< HEAD
   <updated>2013-05-22T18:08:30-04:00</updated>
+=======
+  <updated>2013-10-30T13:52:14-04:00</updated>
+>>>>>>> upstream/master
   <id>http://dev.theladders.com/</id>
   <author>
     <name><![CDATA[TheLadders Engineering]]></name>
@@ -18,7 +22,11 @@
     <link href="http://dev.theladders.com/2013/05/varnish-in-five-acts/"/>
     <updated>2013-05-03T13:21:00-04:00</updated>
     <id>http://dev.theladders.com/2013/05/varnish-in-five-acts</id>
+<<<<<<< HEAD
     <content type="html"><![CDATA[<p><blockquote><p>“Take a load off Annie. Take a load for free. Take a load off Annie. And you put the load right on me.” -- Robbie Robertson</p></blockquote></p>
+=======
+    <content type="html"><![CDATA[<p><blockquote><p>“Take a load off Annie. Take a load for free. Take a load off Annie. And you put the load right on me.” &mdash; Robbie Robertson</p></blockquote></p>
+>>>>>>> upstream/master
 
 <h2>Act I: The Players</h2>
 
@@ -30,7 +38,11 @@
 
 <p>In addition, our service code was muddled with messy caching logic.  Making the code harder to reuse, and more annoyingly, changes just affecting caching forced us to re-release the entire service.  We didn’t like this mixing of concerns.</p>
 
+<<<<<<< HEAD
 <p>We thought we could do better if we used external read through caches. It's easy to slide them between existing clients and services. With caching outside the service, it get released only when their logic changes not because we’re tuning caching.</p>
+=======
+<p>We thought we could do better if we used external read through caches. It&rsquo;s easy to slide them between existing clients and services. With caching outside the service, it get released only when their logic changes not because we’re tuning caching.</p>
+>>>>>>> upstream/master
 
 <p>For reasons too numerous to cover in this post we chose <a href="https://www.varnish-cache.org/about">Varnish</a> as our read through cache.</p>
 
@@ -60,7 +72,11 @@
 
 <h3>Via Header:</h3>
 
+<<<<<<< HEAD
 <p>All requests that change the state of a job seeker that are made via the service attach a header in the response called "x-invalidates" that looks something like:</p>
+=======
+<p>All requests that change the state of a job seeker that are made via the service attach a header in the response called &ldquo;x-invalidates&rdquo; that looks something like:</p>
+>>>>>>> upstream/master
 
 <p><code>
 x-invalidates: /jobseekers/123
@@ -86,6 +102,7 @@ curl -X PURGE varnish-jobseeker/jobseekers/123
 
 <h3>Load Balancing</h3>
 
+<<<<<<< HEAD
 <p>We have four service servers behind varnish so we create four backend entries and then set up a director to round robin between them. Then in vcl_recv, we set our director named 'nodes' to be the backend that we will use to fetch content.</p>
 
 <p>``` bash
@@ -115,6 +132,37 @@ backend JS1 {
   .port  = "8080";</p>
 
 <p>  ...
+=======
+<p>We have four service servers behind varnish so we create four backend entries and then set up a director to round robin between them. Then in vcl_recv, we set our director named &lsquo;nodes&rsquo; to be the backend that we will use to fetch content.</p>
+
+<p>``` bash
+backend JS1 {
+  .host  = &ldquo;JS1&rdquo;;
+  .port  = &ldquo;8080&rdquo;;</p>
+
+<p>  &hellip;
+}</p>
+
+<p>backend JS2 {
+  .host  = &ldquo;JS2&rdquo;;
+  .port  = &ldquo;8080&rdquo;;</p>
+
+<p>  &hellip;
+}</p>
+
+<p>backend JS3 {
+  .host  = &ldquo;JS3&rdquo;;
+  .port  = &ldquo;8080&rdquo;;</p>
+
+<p>  &hellip;
+}</p>
+
+<p>backend JS4 {
+  .host  = &ldquo;JS4&rdquo;;
+  .port  = &ldquo;8080&rdquo;;</p>
+
+<p>  &hellip;
+>>>>>>> upstream/master
 }</p>
 
 <p>director nodes round-robin {
@@ -138,11 +186,19 @@ backend JS1 {
 
 <h3>Degraded</h3>
 
+<<<<<<< HEAD
 <p>Each backend is setup with a probe url that we use to check its health. If the probe url doesn't return at least one HTTP 200 response within a fifteen second period, we mark that backend as unhealthy.</p>
 
 <p>``` bash
 backend ... {
    ...</p>
+=======
+<p>Each backend is setup with a probe url that we use to check its health. If the probe url doesn&rsquo;t return at least one HTTP 200 response within a fifteen second period, we mark that backend as unhealthy.</p>
+
+<p>``` bash
+backend &hellip; {
+   &hellip;</p>
+>>>>>>> upstream/master
 
 <p>  .probe = {</p>
 
@@ -163,6 +219,7 @@ backend ... {
 sub vcl_fetch {
   # max time to keep an item in the cache past its ttl
   # used in conjunction with code in vcl_recv to
+<<<<<<< HEAD
   # deal with 'sick' backends
   set beresp.grace = 1h;</p>
 
@@ -171,6 +228,16 @@ sub vcl_fetch {
 
 <p>sub vcl_recv {
   ...</p>
+=======
+  # deal with &lsquo;sick&rsquo; backends
+  set beresp.grace = 1h;</p>
+
+<p>  &hellip;
+}</p>
+
+<p>sub vcl_recv {
+  &hellip;</p>
+>>>>>>> upstream/master
 
 <p>  # extra ttl for cached objects based on backend health
   if (!req.backend.healthy) {</p>
@@ -192,8 +259,13 @@ sub vcl_fetch {
 <p>We do two types of invalidation:</p>
 
 <ul>
+<<<<<<< HEAD
 <li>invalidation based on the 'x-invalidates' header that comes back with a response</li>
 <li>'manual' invalidation based on sending the HTTP PURGE verb to a url in the Varnish cache.</li>
+=======
+<li>invalidation based on the &lsquo;x-invalidates&rsquo; header that comes back with a response</li>
+<li>&lsquo;manual&rsquo; invalidation based on sending the HTTP PURGE verb to a url in the Varnish cache.</li>
+>>>>>>> upstream/master
 </ul>
 
 
@@ -201,6 +273,7 @@ sub vcl_fetch {
 
 <p>``` bash
 acl purge {
+<<<<<<< HEAD
   "localhost";
   "10.10.10.10";
 }</p>
@@ -210,6 +283,17 @@ acl purge {
 
 <p>  # 'manual' purge
   if (req.request == "PURGE") {</p>
+=======
+  &ldquo;localhost&rdquo;;
+  &ldquo;10.10.10.10&rdquo;;
+}</p>
+
+<p>sub vcl_recv {
+  &hellip;</p>
+
+<p>  # &lsquo;manual&rsquo; purge
+  if (req.request == &ldquo;PURGE&rdquo;) {</p>
+>>>>>>> upstream/master
 
 <pre><code>if (client.ip ~ purge) {
    return(lookup);
@@ -220,7 +304,11 @@ error 405 "Not allowed.";
 
 <p>  }</p>
 
+<<<<<<< HEAD
 <p>  ...
+=======
+<p>  &hellip;
+>>>>>>> upstream/master
 }
 ```</p>
 
@@ -228,8 +316,13 @@ error 405 "Not allowed.";
 
 <p>``` bash
 sub vcl_hit {
+<<<<<<< HEAD
   # 'manual' purge
   if (req.request == "PURGE") {</p>
+=======
+  # &lsquo;manual&rsquo; purge
+  if (req.request == &ldquo;PURGE&rdquo;) {</p>
+>>>>>>> upstream/master
 
 <pre><code>purge;
 error 200 "Purged.";
@@ -239,12 +332,21 @@ error 200 "Purged.";
 }
 ```</p>
 
+<<<<<<< HEAD
 <p>If it doesn't, return a 404 response code:</p>
 
 <p>``` bash
 sub vcl_miss {
   # 'manual' purge
   if (req.request == "PURGE") {</p>
+=======
+<p>If it doesn&rsquo;t, return a 404 response code:</p>
+
+<p>``` bash
+sub vcl_miss {
+  # &lsquo;manual&rsquo; purge
+  if (req.request == &ldquo;PURGE&rdquo;) {</p>
+>>>>>>> upstream/master
 
 <pre><code>purge;
 error 404 "Not in cache.";
@@ -258,11 +360,19 @@ error 404 "Not in cache.";
 
 <p>``` bash
 sub vcl_fetch {
+<<<<<<< HEAD
   ...</p>
 
 <p>  set beresp.http.x-url = req.url;</p>
 
 <p>  ...
+=======
+  &hellip;</p>
+
+<p>  set beresp.http.x-url = req.url;</p>
+
+<p>  &hellip;
+>>>>>>> upstream/master
 }</p>
 
 <p>sub vcl_deliver {
@@ -271,6 +381,7 @@ sub vcl_fetch {
 }
 ```</p>
 
+<<<<<<< HEAD
 <p>Any 'successful' PUT, POST, DELETE or PATCH response will have its x-invalidates header used as a regular expression to invalidate existing content whose x-url header matches the x-invalidates regex.</p>
 
 <p>```
@@ -280,6 +391,17 @@ sub vcl_fetch {
 <p>  # cache invalidation
   set beresp.http.x-url = req.url;
   if (req.request == "PUT" || req.request == "POST" || req.request == "DELETE" || req.request == "PATCH") {</p>
+=======
+<p>Any &lsquo;successful&rsquo; PUT, POST, DELETE or PATCH response will have its x-invalidates header used as a regular expression to invalidate existing content whose x-url header matches the x-invalidates regex.</p>
+
+<p>```
+sub vcl_fetch {
+  &hellip;</p>
+
+<p>  # cache invalidation
+  set beresp.http.x-url = req.url;
+  if (req.request == &ldquo;PUT&rdquo; || req.request == &ldquo;POST&rdquo; || req.request == &ldquo;DELETE&rdquo; || req.request == &ldquo;PATCH&rdquo;) {</p>
+>>>>>>> upstream/master
 
 <pre><code>if  (beresp.status &gt;= 200 &amp;&amp; beresp.status &lt; 400) {
  ban("obj.http.x-url ~ " + beresp.http.x-invalidates);
@@ -298,8 +420,13 @@ sub vcl_fetch {
 
 <p>``` bash
 backend JS1 {
+<<<<<<< HEAD
   .host  = "JS1";
   .port  = "8080";
+=======
+  .host  = &ldquo;JS1&rdquo;;
+  .port  = &ldquo;8080&rdquo;;
+>>>>>>> upstream/master
   .probe = {</p>
 
 <pre><code>.url = "/donjohnson/pulse";
@@ -313,8 +440,13 @@ backend JS1 {
 }</p>
 
 <p>backend JS2 {
+<<<<<<< HEAD
   .host  = "JS2";
   .port  = "8080";
+=======
+  .host  = &ldquo;JS2&rdquo;;
+  .port  = &ldquo;8080&rdquo;;
+>>>>>>> upstream/master
   .probe = {</p>
 
 <pre><code>.url = "/donjohnson/pulse";
@@ -328,8 +460,13 @@ backend JS1 {
 }</p>
 
 <p>backend JS3 {
+<<<<<<< HEAD
   .host  = "JS3";
   .port  = "8080";
+=======
+  .host  = &ldquo;JS3&rdquo;;
+  .port  = &ldquo;8080&rdquo;;
+>>>>>>> upstream/master
   .probe = {</p>
 
 <pre><code>.url = "/donjohnson/pulse";
@@ -343,8 +480,13 @@ backend JS1 {
 }</p>
 
 <p>backend JS4 {
+<<<<<<< HEAD
   .host  = "JS4";
   .port  = "8080";
+=======
+  .host  = &ldquo;JS4&rdquo;;
+  .port  = &ldquo;8080&rdquo;;
+>>>>>>> upstream/master
   .probe = {</p>
 
 <pre><code>.url = "/donjohnson/pulse";
@@ -364,11 +506,19 @@ backend JS1 {
   { .backend = JS4 ; }
 }</p>
 
+<<<<<<< HEAD
 <h1>what machines can institute a 'manual' purge</h1>
 
 <p>acl purge {
   "localhost";
   "192.1.1.4";
+=======
+<h1>what machines can institute a &lsquo;manual&rsquo; purge</h1>
+
+<p>acl purge {
+  &ldquo;localhost&rdquo;;
+  &ldquo;192.1.1.4&rdquo;;
+>>>>>>> upstream/master
 }</p>
 
 <h1>store in cache only by url, not backend host</h1>
@@ -381,12 +531,20 @@ backend JS1 {
 <p>sub vcl_fetch {
   # max time to keep an item in the cache past its ttl
   # used in conjunction with code in vcl_recv to
+<<<<<<< HEAD
   # deal with 'sick' backends
+=======
+  # deal with &lsquo;sick&rsquo; backends
+>>>>>>> upstream/master
   set beresp.grace = 1h;</p>
 
 <p>  # cache invalidation
   set beresp.http.x-url = req.url;
+<<<<<<< HEAD
   if (req.request == "PUT" || req.request == "POST" || req.request == "DELETE" || req.request == "PATCH") {</p>
+=======
+  if (req.request == &ldquo;PUT&rdquo; || req.request == &ldquo;POST&rdquo; || req.request == &ldquo;DELETE&rdquo; || req.request == &ldquo;PATCH&rdquo;) {</p>
+>>>>>>> upstream/master
 
 <pre><code>if  (beresp.status &gt;= 200 &amp;&amp; beresp.status &lt; 400) {
  ban("obj.http.x-url ~ " + beresp.http.x-invalidates);
@@ -399,8 +557,13 @@ backend JS1 {
 <p>sub vcl_recv {
   set req.backend = nodes;</p>
 
+<<<<<<< HEAD
 <p>  # 'manual' purge
   if (req.request == "PURGE") {</p>
+=======
+<p>  # &lsquo;manual&rsquo; purge
+  if (req.request == &ldquo;PURGE&rdquo;) {</p>
+>>>>>>> upstream/master
 
 <pre><code>if (client.ip ~ purge) {
    return(lookup);
@@ -431,8 +594,13 @@ error 405 "Not allowed.";
 }</p>
 
 <p>sub vcl_hit {
+<<<<<<< HEAD
   # 'manual' purge
   if (req.request == "PURGE") {</p>
+=======
+  # &lsquo;manual&rsquo; purge
+  if (req.request == &ldquo;PURGE&rdquo;) {</p>
+>>>>>>> upstream/master
 
 <pre><code>purge;
 error 200 "Purged.";
@@ -442,8 +610,13 @@ error 200 "Purged.";
 }</p>
 
 <p>sub vcl_miss {
+<<<<<<< HEAD
   # 'manual' purge
   if (req.request == "PURGE") {</p>
+=======
+  # &lsquo;manual&rsquo; purge
+  if (req.request == &ldquo;PURGE&rdquo;) {</p>
+>>>>>>> upstream/master
 
 <pre><code>purge;
 error 404 "Not in cache.";
